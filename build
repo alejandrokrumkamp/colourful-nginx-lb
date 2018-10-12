@@ -1,0 +1,3 @@
+# build Dockerfile with FROM NGINX and EXPOSE ports
+docker build -t colours-servers .
+
