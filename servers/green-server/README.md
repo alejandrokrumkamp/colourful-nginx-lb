@@ -1,1 +1,0 @@
-# cuenca-ping-server
