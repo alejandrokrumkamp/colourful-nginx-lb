@@ -1,9 +1,10 @@
 {
-  "name": "cuenca-ping-server",
+  "name": "colour-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js 8000 blue",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
