@@ -1,15 +1,23 @@
 const express = require('express');
+const { exec } = require('child_process');
+
 const app = express();
 const ip = process.argv[2];
 const port = process.argv[3];
-const colour = process.argv[4]
+const colour = process.argv[4];
+const raspberry = process.argv[5];
 let hitCount = 0;
 
-if(typeof port === 'undefined' || typeof colour === 'undefined')
+exec('cd ../raspberryPi && ./build');
+
+if(typeof port === 'undefined' || typeof colour === 'undefined' )
 	throw 'Port and colour must be passed as node parameters';
 
 app.get('/', function (req, res) {
   hitCount++;
+  if(typeof raspberry !== 'undefined'){
+    exec('cd ../raspberryPi && ./blink');
+  }
   res.set('Content-Type', 'text/html');
   res.send(new Buffer(`<style>/* vietnamese */
   @font-face {
